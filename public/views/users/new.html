@@ -1,0 +1,15 @@
+<h2> Add User </h2>
+
+<form name='newUser' novalidate class='form-horizontal'>    
+    <normal-field record='user' field='name' live='false' required='true'></normal-field>
+    <normal-field record='user' field='designation' live='false' required='true'></normal-field>
+    <normal-field record='user' field='username' live='false' required='true'></normal-field>
+    <normal-field record='user' field='password' live='false' required='true'></normal-field>
+    <normal-field record='user' field='allocated' live='false' required='true'></normal-field>
+    <!--<new-field record='contact' live='false'></new-field>-->
+    <div class='row form-group'>
+        <div class='col-sm-offset-2'>
+            <button class='btn btn-primary' ng-click='save()'> Save </button>
+        </div>
+    </div>
+</form>

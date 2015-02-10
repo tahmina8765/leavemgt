@@ -1,7 +1,7 @@
 angular.module('contactsApp')
         .controller('ListController', function ($scope, $rootScope, Leave, $location, options) {
             $rootScope.PAGE = "all";
-            $scope.contacts = Leave.query();
+            $scope.leaves = Leave.query();
             $scope.fields = ['dateFrom', 'dateTo', 'reason', 'days'].concat(options.displayed_fields);
 
             $scope.sort = function (field) {
@@ -18,27 +18,27 @@ angular.module('contactsApp')
         })
         .controller('NewController', function ($scope, $rootScope, Leave, $location) {
             $rootScope.PAGE = "new";
-            $scope.contact = new Leave({
+            $scope.leave = new Leave({
                 dateFrom: ['', 'date'],
                 dateTo: ['', 'date'],
                 reason: ['', 'text']
             });
 
             $scope.save = function () {
-                if ($scope.newContact.$invalid) {
+                if ($scope.newLeave.$invalid) {
                     $scope.$broadcast('record:invalid');
                 } else {
                     // Find Total Day
-                    var d1 = new Date($scope.contact.dateFrom[0]);
-                    var d2 = new Date($scope.contact.dateTo[0]);
+                    var d1 = new Date($scope.leave.dateFrom[0]);
+                    var d2 = new Date($scope.leave.dateTo[0]);
                     var miliseconds = d2 - d1;
                     var seconds = miliseconds / 1000;
                     var minutes = seconds / 60;
                     var hours = minutes / 60;
                     var days = (hours / 24) + 1;
-                    $scope.contact.days = [days, 'text'];
-                    
-                    $scope.contact.$save();
+                    $scope.leave.days = [days, 'text'];
+
+                    $scope.leave.$save();
                     $location.url('/leaves');
                 }
             };
@@ -89,4 +89,26 @@ angular.module('contactsApp')
             $scope.show = function (id) {
                 $location.url('/user/' + id);
             };
-        });
+        })
+        .controller('UsersNewController', function ($scope, $rootScope, User, $location) {
+            $rootScope.PAGE = "new-user";
+            $scope.user = new User({
+                name: '',
+                designation: '',
+                username: '',
+                password: '',
+                allocated: '',
+                taken: ''
+            });
+
+            $scope.save = function () {
+                if ($scope.newUser.$invalid) {
+                    $scope.$broadcast('record:invalid');
+                } else {
+                    $scope.user.password =  hash($scope.user.password);
+                    $scope.user.$save();
+                    $location.url('/users');
+                }
+            };
+        })
+        ;

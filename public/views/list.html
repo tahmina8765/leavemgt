@@ -10,13 +10,13 @@
         </tr>
     </thead>
     <tbody>
-        <tr ng-click='show(contact.id)' ng-repeat='contact in contacts| filter: query | orderBy: sort.field : sort.order'>
+        <tr ng-click='show(leave.id)' ng-repeat='leave in leaves| filter: query | orderBy: sort.field : sort.order'>
             <td ng-repeat='field in fields'> 
                 <div ng-if="field == 'dateFrom' || field == 'dateTo'">
-                    {{ contact[field][0] | date : 'yyyy-MMM-dd'}}
+                    {{ leave[field][0] | date : 'yyyy-MMM-dd'}}
                 </div>
                 <div ng-if="field !== 'dateFrom' && field !== 'dateTo'">
-                    {{ contact[field][0]}}
+                    {{ leave[field][0]}}
                 </div>
             </td>
         </tr>

@@ -1,12 +1,13 @@
 <h2> Apply for Leave </h2>
 
-<form name='newContact' novalidate class='form-horizontal'>
-    <form-field record='contact' field='reason' live='false' required='true'></form-field>
-    <form-field record='contact' field='dateFrom' live='false' required='true'></form-field>
-    <form-field record='contact' field='dateTo' live='false' required='true'></form-field>
-    <form-field ng-repeat='(k,v) in contact | keyFilter: "dateFrom" | keyFilter: "dateTo" | keyFilter: "reason" ' record='contact' field='{{k}}'></form-field> 
+<form name='newLeave' novalidate class='form-horizontal'>
+    
+    <form-field record='leave' field='dateFrom' live='false' required='true'></form-field>
+    <form-field record='leave' field='dateTo' live='false' required='true'></form-field>
+    <text-field record='leave' field='reason' live='false' required='true'></text-field>
+    <form-field ng-repeat='(k,v) in leave | keyFilter: "dateFrom" | keyFilter: "dateTo" | keyFilter: "reason" ' record='contact' field='{{k}}'></form-field> 
 
-    <!--<new-field record='contact' live='false'></new-field>-->
+    <!--<new-field record='leave' live='false'></new-field>-->
 
     <div class='row form-group'>
         <div class='col-sm-offset-2'>

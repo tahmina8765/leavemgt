@@ -57,10 +57,10 @@ router
             });
         })
         .post(function (req, res) {
-            var contact = req.body;
-            contact.userId = req.user.id;
+            var user = req.body;
+            user.userId = req.user.id;
 
-            db_user.insert(contact, function (err, data) {
+            db_user.insert(user, function (err, data) {
                 res.json(data);
             });
         });
