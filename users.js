@@ -34,8 +34,8 @@ router
         })
         .post('/register', function (req, res) {
             var user = {
-                firstName: req.body.firstName,
-                lastName: req.body.lastName,
+                name: req.body.name,
+                designation: req.body.designation,
                 username: req.body.username,
                 password: hash(req.body.password),
                 options: {}

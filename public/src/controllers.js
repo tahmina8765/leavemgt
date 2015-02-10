@@ -66,7 +66,7 @@ angular.module('contactsApp')
     .controller('UsersListController', function ($scope, $rootScope, User, $location, options) {
         $rootScope.PAGE = "all-users";
         $scope.users = User.query();
-        $scope.fields = ['firstName', 'lastName', 'username'];
+        $scope.fields = ['name', 'designation', 'username'];
 
         $scope.sort = function (field) {
             $scope.sort.field = field;
