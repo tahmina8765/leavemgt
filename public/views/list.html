@@ -11,7 +11,6 @@
     </thead>
     <tbody>
         <tr ng-click='show(contact.id)' ng-repeat='contact in contacts| filter: query | orderBy: sort.field : sort.order'>
-
             <td ng-repeat='field in fields'> 
                 <div ng-if="field == 'dateFrom' || field == 'dateTo'">
                     {{ contact[field][0] | date : 'yyyy-MMM-dd'}}
@@ -19,7 +18,6 @@
                 <div ng-if="field !== 'dateFrom' && field !== 'dateTo'">
                     {{ contact[field][0]}}
                 </div>
-
             </td>
         </tr>
     </tbody>
