@@ -13,6 +13,10 @@ angular.module('ContactsApp', ['ngRoute', 'ngResource', 'ngMessages'])
                 controller: 'SingleController',
                 templateUrl: 'views/single.html'
             })
+            .when('/users', {
+                controller: 'UsersListController',
+                templateUrl: 'views/users/list.html'
+            })
             .when('/settings', {
                 controller: 'SettingsController',
                 templateUrl: 'views/settings.html'

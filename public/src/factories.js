@@ -4,6 +4,11 @@ angular.module('ContactsApp')
             'update': { method: 'PUT' }
         });
     })
+    .factory('User', function ($resource) {
+        return $resource('/api/user/:id', { id: '@id' }, {
+            'update': { method: 'PUT' }
+        });
+    })
     .factory('Fields', function ($q, $http, Leave) {
         var url = '/options/displayed_fields',
             ignore = ['dateFrom', 'dateTo', 'id', 'userId'],

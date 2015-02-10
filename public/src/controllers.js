@@ -62,4 +62,21 @@ angular.module('ContactsApp')
 
             Fields.set(options.displayed_fields);
         };
+    })
+    .controller('UsersListController', function ($scope, $rootScope, User, $location, options) {
+        $rootScope.PAGE = "all-users";
+        $scope.users = User.query();
+        $scope.fields = ['firstName', 'lastName', 'username'].concat(options.displayed_fields);
+
+        $scope.sort = function (field) {
+            $scope.sort.field = field;
+            $scope.sort.order = !$scope.sort.order;
+        };
+
+        $scope.sort.field = 'username';
+        $scope.sort.order = false;
+
+        $scope.show = function (id) {
+            $location.url('/user/' + id);
+        };
     });
