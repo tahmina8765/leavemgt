@@ -34,8 +34,8 @@ router
         })
         .post('/register', function (req, res) {
             var user = {
-                firstname: req.body.firstname,
-                lastname: req.body.lastname,
+                firstName: req.body.firstName,
+                lastName: req.body.lastName,
                 username: req.body.username,
                 password: hash(req.body.password),
                 options: {}
@@ -78,27 +78,5 @@ router
                 res.json(data[0].options.displayed_fields);
             });
         });
-
-
-
-
-router
-        .use(bodyParser.json())
-        .route('/leave')
-        .get(function (req, res) {
-            db.find({userId: parseInt(req.user.id, 10)}, function (err, data) {
-                res.json(data);
-            });
-        })
-        .post(function (req, res) {
-            var contact = req.body;
-            contact.userId = req.user.id;
-
-            db.insert(contact, function (err, data) {
-                res.json(data);
-            });
-        });
-
-
 
 module.exports = router;
