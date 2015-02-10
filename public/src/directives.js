@@ -1,4 +1,4 @@
-angular.module('ContactsApp')
+angular.module('contactsApp')
     .value('FieldTypes', {
         text: ['Text', 'should be text'],
         email: ['Email', 'should be an email address'],

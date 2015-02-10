@@ -1,4 +1,4 @@
-angular.module('ContactsApp')
+angular.module('contactsApp')
     .controller('ListController', function ($scope, $rootScope, Leave, $location, options) {
         $rootScope.PAGE = "all";
         $scope.contacts = Leave.query();

@@ -1,4 +1,4 @@
-angular.module('ContactsApp', ['ngRoute', 'ngResource', 'ngMessages'])
+angular.module('contactsApp', ['ngRoute', 'ngResource', 'ngMessages'])
     .config(function ($routeProvider, $locationProvider) {
         $routeProvider
             .when('/leaves', {

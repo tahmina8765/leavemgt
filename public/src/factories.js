@@ -1,4 +1,4 @@
-angular.module('ContactsApp')
+angular.module('contactsApp')
     .factory('Leave', function ($resource) {
         return $resource('/api/leave/:id', { id: '@id' }, {
             'update': { method: 'PUT' }

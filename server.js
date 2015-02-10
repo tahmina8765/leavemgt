@@ -1,6 +1,6 @@
 var express = require('express'),
     api     = require('./api'),
-    users   = require('./accounts'),
+    users   = require('./users'),
     app     = express();
 
 app
