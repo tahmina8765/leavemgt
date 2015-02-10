@@ -1,0 +1,25 @@
+<!-- Fixed navbar -->
+<nav id="header_nav" class="navbar navbar-default navbar-fixed-top" data-ng-controller="PagesController">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/"><img src="images/logo.png" class="img-responsive"></a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="/">Home</a></li>
+                <li data-ng-show="token"><a href="/employees">Employees</a></li>                
+                <li data-ng-show="token"><a ng-href="/me">Me</a></li>
+                <li data-ng-hide="token"><a ng-href="/signin">Login</a></li>
+                <!--<li data-ng-hide="token"><a ng-href="/signup">Signup</a></li>-->
+                <li data-ng-show="token"><a href="/" ng-click="logout()">Logout</a></li>
+                <li><a href="/contact-us">Contact Us</a></li>
+            </ul>
+        </div><!--/.nav-collapse -->
+    </div>
+</nav>

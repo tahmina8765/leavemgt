@@ -1,0 +1,24 @@
+{
+  "name": "leavemgt",
+  "version": "0.0.0",
+  "homepage": "https://github.com/tahmina8765/leavemgt",
+  "authors": [
+    "tahmina8765 <tahmina8765@yahoo.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/lib",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap-sass-official": "~3.2.0",
+    "fontawesome": "~4.3.0",
+    "angular-messages": "~1.3.0-build.3024+sha.60c13a1",
+    "angular-resource": "~1.2.21",
+    "angular-route": "~1.2.21"
+  }
+}

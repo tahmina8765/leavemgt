@@ -1,0 +1,31 @@
+.navbar {
+    background: #fff;
+    .navbar-toggle {
+        @include transition-property(all);
+        @include transition-duration(0.5s);
+    }
+    .navbar-brand{
+        line-height: 70px;
+        padding: 5px 7px;
+        @include transition-property(all);
+        @include transition-duration(0.5s);
+        img{
+            width: 100%;
+            @include transition-property(all);
+            @include transition-duration(0.5s);
+        }
+    }
+}
+
+@media (min-width: 1024px) {
+    ul.navbar-nav > li > a{
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
+    background-color: transparent;
+    color: #555;
+}
+

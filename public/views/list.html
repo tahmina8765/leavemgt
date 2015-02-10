@@ -4,8 +4,8 @@
         <tr>
             <th ng-repeat='field in fields' ng-click='sort(field)'>
                 {{ field | labelCase }}
-                <span ng-show='sort.field === field && !sort.order' class='glyphicon glyphicon-chevron-down'></span>
-                <span ng-show='sort.field === field && sort.order' class='glyphicon glyphicon-chevron-up'></span>
+                <span ng-show='sort.field === field && !sort.order' class='fa fa-angle-down'></span>
+                <span ng-show='sort.field === field && sort.order' class='fa fa-angle-up'></span>
             </th>
         </tr>
     </thead>

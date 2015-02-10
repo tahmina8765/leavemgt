@@ -1,0 +1,32 @@
+body{
+    padding-top: 100px;
+    font-size: 16px;
+}
+h1, h2, h3, .panel-heading{
+    color: $brand-primary;
+    font-family: sans-serif;
+}
+ul li, ol li{
+    margin: 0;
+    padding: 0;
+}
+
+.container-fluid{
+    margin: 0 10%;
+}
+
+h1{
+    font-size: 42px;
+    padding: 20px 0;
+}
+
+a:focus {
+    outline: none;
+    outline: 0px auto -webkit-focus-ring-color;
+}
+.stronger{
+    font-size: 22px;
+}
+.img-responsive{
+    display: inline-block;
+}
